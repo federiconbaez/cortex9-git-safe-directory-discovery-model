@@ -1,0 +1,671 @@
+{
+ "01_own_repo": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/home/alice/proj/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "owned",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "owner uid 1000 == current uid"
+   ],
+   "visited": [
+    "/home/alice/proj/src",
+    "/home/alice/proj"
+   ],
+   "worktree_or_dir": "/home/alice/proj"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/home/alice/proj/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "owned",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "owner uid 1000 == current uid"
+   ],
+   "visited": [
+    "/home/alice/proj/src",
+    "/home/alice/proj"
+   ],
+   "worktree_or_dir": "/home/alice/proj"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/home/alice/proj/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/home/alice/proj/src",
+    "/home/alice/proj"
+   ],
+   "worktree_or_dir": "/home/alice/proj"
+  }
+ },
+ "02_foreign_parent_repo": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/tmp/alice-work",
+    "/tmp"
+   ],
+   "worktree_or_dir": "/tmp"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/tmp/alice-work",
+    "/tmp"
+   ],
+   "worktree_or_dir": "/tmp"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [
+    "core.fsmonitor"
+   ],
+   "gitdir": "/tmp/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/tmp/alice-work",
+    "/tmp"
+   ],
+   "worktree_or_dir": "/tmp"
+  }
+ },
+ "03_foreign_repo_listed_global": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "safe_listed",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "global: '/srv/shared' -> match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "safe_listed",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "global: '/srv/shared' -> match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "04_listed_only_in_repo_config": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [
+    "repo"
+   ],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [
+    "repo"
+   ],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "05_listed_only_on_cmdline": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [
+    "cmdline"
+   ],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [
+    "cmdline"
+   ],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "06_global_reset_after_system": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "system: '/srv/shared' -> match",
+    "global: '' -> reset"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "system: '/srv/shared' -> match",
+    "global: '' -> reset"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "07_star_in_system": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "safe_listed",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "system: '*' -> safe"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "system: '*' -> no match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "08_star_then_reset": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "system: '*' -> safe",
+    "global: '' -> reset",
+    "global: '/srv/other' -> no match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "system: '*' -> no match",
+    "global: '' -> reset",
+    "global: '/srv/other' -> no match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "09_tilde_interpolation": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/home/alice/from-bob/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "safe_listed",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "global: '~/from-bob' -> match"
+   ],
+   "visited": [
+    "/home/alice/from-bob"
+   ],
+   "worktree_or_dir": "/home/alice/from-bob"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/home/alice/from-bob/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "safe_listed",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "global: '~/from-bob' -> match"
+   ],
+   "visited": [
+    "/home/alice/from-bob"
+   ],
+   "worktree_or_dir": "/home/alice/from-bob"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/home/alice/from-bob/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/home/alice/from-bob"
+   ],
+   "worktree_or_dir": "/home/alice/from-bob"
+  }
+ },
+ "10_trailing_slash_no_match": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "global: '/srv/shared/' -> no match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [
+    "global: '/srv/shared/' -> no match"
+   ],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/shared"
+   ],
+   "worktree_or_dir": "/srv/shared"
+  }
+ },
+ "11_ceiling_stops_walk": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "hit_ceiling",
+   "ownership": null,
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/tmp/alice-work/sub",
+    "/tmp/alice-work"
+   ],
+   "worktree_or_dir": null
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "hit_ceiling",
+   "ownership": null,
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/tmp/alice-work/sub",
+    "/tmp/alice-work"
+   ],
+   "worktree_or_dir": null
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "hit_ceiling",
+   "ownership": null,
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/tmp/alice-work/sub",
+    "/tmp/alice-work"
+   ],
+   "worktree_or_dir": null
+  }
+ },
+ "12_mount_point_stops_walk": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "hit_mount_point",
+   "ownership": null,
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/mnt/share/docs",
+    "/mnt/share"
+   ],
+   "worktree_or_dir": null
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "hit_mount_point",
+   "ownership": null,
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/mnt/share/docs",
+    "/mnt/share"
+   ],
+   "worktree_or_dir": null
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "hit_mount_point",
+   "ownership": null,
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/mnt/share/docs",
+    "/mnt/share"
+   ],
+   "worktree_or_dir": null
+  }
+ },
+ "13_foreign_bare_repo": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/srv/bare.git"
+   ],
+   "worktree_or_dir": "/srv/bare.git"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": null,
+   "ignored_safe_directory_sources": [],
+   "kind": "invalid_ownership",
+   "ownership": "rejected",
+   "repo_config_parsed": false,
+   "safe_trace": [],
+   "visited": [
+    "/srv/bare.git"
+   ],
+   "worktree_or_dir": "/srv/bare.git"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/bare.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "bare",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/bare.git"
+   ],
+   "worktree_or_dir": "/srv/bare.git"
+  }
+ },
+ "14_intermediate_dir_not_checked": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/bobdir/alice-repo/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "owned",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "owner uid 1000 == current uid"
+   ],
+   "visited": [
+    "/srv/bobdir/alice-repo"
+   ],
+   "worktree_or_dir": "/srv/bobdir/alice-repo"
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/bobdir/alice-repo/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "owned",
+   "repo_config_parsed": true,
+   "safe_trace": [
+    "owner uid 1000 == current uid"
+   ],
+   "visited": [
+    "/srv/bobdir/alice-repo"
+   ],
+   "worktree_or_dir": "/srv/bobdir/alice-repo"
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/bobdir/alice-repo/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "discovered",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [
+    "/srv/bobdir/alice-repo"
+   ],
+   "worktree_or_dir": "/srv/bobdir/alice-repo"
+  }
+ },
+ "15_git_dir_env": {
+  "fix_0f85c4a": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "explicit",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [],
+   "worktree_or_dir": null
+  },
+  "fix_8959555": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "explicit",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [],
+   "worktree_or_dir": null
+  },
+  "pre_fix": {
+   "command_valued_keys_in_repo_config": [],
+   "gitdir": "/srv/shared/.git",
+   "ignored_safe_directory_sources": [],
+   "kind": "explicit",
+   "ownership": "not_checked",
+   "repo_config_parsed": true,
+   "safe_trace": [],
+   "visited": [],
+   "worktree_or_dir": null
+  }
+ }
+}

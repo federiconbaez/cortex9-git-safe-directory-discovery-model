@@ -1,0 +1,52 @@
+{
+  "name": "11_ceiling_stops_walk",
+  "description": "GIT_CEILING_DIRECTORIES=/tmp prevents reaching Bob's /tmp/.git from /tmp/alice-work/sub.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/tmp",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/tmp/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git/refs",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/alice-work/sub",
+      "owner": 1000
+    }
+  ],
+  "cwd": "/tmp/alice-work/sub",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice",
+    "ceilings": [
+      "/tmp"
+    ]
+  }
+}

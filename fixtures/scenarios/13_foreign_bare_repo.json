@@ -1,0 +1,37 @@
+{
+  "name": "13_foreign_bare_repo",
+  "description": "cwd is a bare repository owned by Bob.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/srv/bare.git",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/bare.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/srv/bare.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/bare.git/refs",
+      "owner": 1001
+    }
+  ],
+  "cwd": "/srv/bare.git",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice"
+  }
+}

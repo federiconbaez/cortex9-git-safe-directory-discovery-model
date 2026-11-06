@@ -1,0 +1,18 @@
+{
+  "_note": "Hand-derived from git 8959555, 0f85c4a and v2.35.2 setup.c/config.c. Per mode: [kind, ownership]. Modes: pre_fix, fix_8959555, fix_0f85c4a.",
+  "01_own_repo": [["discovered", "not_checked"], ["discovered", "owned"], ["discovered", "owned"]],
+  "02_foreign_parent_repo": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "03_foreign_repo_listed_global": [["discovered", "not_checked"], ["discovered", "safe_listed"], ["discovered", "safe_listed"]],
+  "04_listed_only_in_repo_config": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "05_listed_only_on_cmdline": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "06_global_reset_after_system": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "07_star_in_system": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["discovered", "safe_listed"]],
+  "08_star_then_reset": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "09_tilde_interpolation": [["discovered", "not_checked"], ["discovered", "safe_listed"], ["discovered", "safe_listed"]],
+  "10_trailing_slash_no_match": [["discovered", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "11_ceiling_stops_walk": [["hit_ceiling", null], ["hit_ceiling", null], ["hit_ceiling", null]],
+  "12_mount_point_stops_walk": [["hit_mount_point", null], ["hit_mount_point", null], ["hit_mount_point", null]],
+  "13_foreign_bare_repo": [["bare", "not_checked"], ["invalid_ownership", "rejected"], ["invalid_ownership", "rejected"]],
+  "14_intermediate_dir_not_checked": [["discovered", "not_checked"], ["discovered", "owned"], ["discovered", "owned"]],
+  "15_git_dir_env": [["explicit", "not_checked"], ["explicit", "not_checked"], ["explicit", "not_checked"]]
+}

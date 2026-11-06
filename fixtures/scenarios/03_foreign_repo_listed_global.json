@@ -1,0 +1,44 @@
+{
+  "name": "03_foreign_repo_listed_global",
+  "description": "Shared repo owned by Bob, listed by Alice in her global config.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/srv/shared",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/srv/shared/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/refs",
+      "owner": 1001
+    }
+  ],
+  "cwd": "/srv/shared",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice",
+    "global": [
+      "/srv/shared"
+    ]
+  }
+}

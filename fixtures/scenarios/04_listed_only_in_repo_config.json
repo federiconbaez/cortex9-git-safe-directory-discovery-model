@@ -1,0 +1,47 @@
+{
+  "name": "04_listed_only_in_repo_config",
+  "description": "Bob's repo lists itself in its own .git/config; that scope is ignored.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/srv/shared",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/srv/shared/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/refs",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/config",
+      "kind": "file",
+      "owner": 1001,
+      "content": "[safe]\ndirectory = /srv/shared\n"
+    }
+  ],
+  "cwd": "/srv/shared",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice"
+  }
+}

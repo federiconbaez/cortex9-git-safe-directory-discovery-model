@@ -1,0 +1,47 @@
+{
+  "name": "06_global_reset_after_system",
+  "description": "System lists the repo; global then resets with an empty value.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/srv/shared",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/srv/shared/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/shared/.git/refs",
+      "owner": 1001
+    }
+  ],
+  "cwd": "/srv/shared",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice",
+    "system": [
+      "/srv/shared"
+    ],
+    "global": [
+      ""
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "12_mount_point_stops_walk",
+  "description": "/mnt/share is on another device than /mnt; without GIT_DISCOVERY_ACROSS_FILESYSTEM the walk stops there and Bob's /mnt/.git is not reached.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/mnt",
+      "owner": 1001
+    },
+    {
+      "path": "/mnt/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/mnt/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/mnt/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/mnt/.git/refs",
+      "owner": 1001
+    },
+    {
+      "path": "/mnt",
+      "owner": 1001
+    },
+    {
+      "path": "/mnt/share",
+      "owner": 1000,
+      "device": 2
+    },
+    {
+      "path": "/mnt/share/docs",
+      "owner": 1000,
+      "device": 2
+    }
+  ],
+  "cwd": "/mnt/share/docs",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice"
+  }
+}

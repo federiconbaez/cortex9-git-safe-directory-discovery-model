@@ -1,0 +1,45 @@
+{
+  "name": "01_own_repo",
+  "description": "Alice works inside her own repository.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/home/alice/proj",
+      "owner": 1000
+    },
+    {
+      "path": "/home/alice/proj/.git",
+      "owner": 1000
+    },
+    {
+      "path": "/home/alice/proj/.git/HEAD",
+      "kind": "file",
+      "owner": 1000,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/home/alice/proj/.git/objects",
+      "owner": 1000
+    },
+    {
+      "path": "/home/alice/proj/.git/refs",
+      "owner": 1000
+    },
+    {
+      "path": "/home/alice/proj/src",
+      "owner": 1000
+    }
+  ],
+  "cwd": "/home/alice/proj/src",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice"
+  }
+}

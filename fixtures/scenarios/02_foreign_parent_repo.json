@@ -1,0 +1,55 @@
+{
+  "name": "02_foreign_parent_repo",
+  "description": "Bob created /tmp/.git; Alice runs a git-aware prompt in /tmp/alice-work (no repo of her own). The discovery walk reaches Bob's repository.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/tmp",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/tmp/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git/refs",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/.git/config",
+      "kind": "file",
+      "owner": 1001,
+      "content": "[core]\nfsmonitor = <command>\n"
+    },
+    {
+      "path": "/tmp",
+      "owner": 1001
+    },
+    {
+      "path": "/tmp/alice-work",
+      "owner": 1000
+    }
+  ],
+  "cwd": "/tmp/alice-work",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice"
+  }
+}

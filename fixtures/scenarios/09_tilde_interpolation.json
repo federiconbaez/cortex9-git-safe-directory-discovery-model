@@ -1,0 +1,44 @@
+{
+  "name": "09_tilde_interpolation",
+  "description": "Global value uses ~/ which expands to Alice's home.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/home/alice/from-bob",
+      "owner": 1001
+    },
+    {
+      "path": "/home/alice/from-bob/.git",
+      "owner": 1001
+    },
+    {
+      "path": "/home/alice/from-bob/.git/HEAD",
+      "kind": "file",
+      "owner": 1001,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/home/alice/from-bob/.git/objects",
+      "owner": 1001
+    },
+    {
+      "path": "/home/alice/from-bob/.git/refs",
+      "owner": 1001
+    }
+  ],
+  "cwd": "/home/alice/from-bob",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice",
+    "global": [
+      "~/from-bob"
+    ]
+  }
+}

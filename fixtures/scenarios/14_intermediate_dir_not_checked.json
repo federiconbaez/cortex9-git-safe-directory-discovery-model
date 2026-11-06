@@ -1,0 +1,45 @@
+{
+  "name": "14_intermediate_dir_not_checked",
+  "description": "Alice's own repo inside a Bob-owned directory: only the top-level dir ownership is checked.",
+  "fs": [
+    {
+      "path": "/home/alice",
+      "owner": 1000
+    },
+    {
+      "path": "/tmp",
+      "owner": 0
+    },
+    {
+      "path": "/srv/bobdir",
+      "owner": 1001
+    },
+    {
+      "path": "/srv/bobdir/alice-repo",
+      "owner": 1000
+    },
+    {
+      "path": "/srv/bobdir/alice-repo/.git",
+      "owner": 1000
+    },
+    {
+      "path": "/srv/bobdir/alice-repo/.git/HEAD",
+      "kind": "file",
+      "owner": 1000,
+      "content": "ref: refs/heads/main"
+    },
+    {
+      "path": "/srv/bobdir/alice-repo/.git/objects",
+      "owner": 1000
+    },
+    {
+      "path": "/srv/bobdir/alice-repo/.git/refs",
+      "owner": 1000
+    }
+  ],
+  "cwd": "/srv/bobdir/alice-repo",
+  "env": {
+    "uid": 1000,
+    "home": "/home/alice"
+  }
+}
