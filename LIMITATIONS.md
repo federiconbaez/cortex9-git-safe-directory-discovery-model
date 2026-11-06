@@ -17,5 +17,6 @@
 - A ceiling entry of `/` is ignored by this model; git's exact handling of
   that case is not modelled.
 - Includes (`include.path`) in system/global config are not modelled.
-- CI configuration is included; at the time of the local commit it had only
-  been run locally, not on a hosted runner.
+- CI is defined in `.github/workflows/ci.yml` (unit tests on Python 3.10–3.13, results regeneration). Results were also
+  reproduced locally on Python 3.13 and 3.10; the status of hosted runs is whatever the
+  repository's Actions page shows.
