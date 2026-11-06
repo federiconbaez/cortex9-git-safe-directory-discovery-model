@@ -124,12 +124,24 @@ def discover(fs: MemFS, cwd: str, env: Env, mode: str) -> Result:
     cwd = MemFS.norm(cwd)
 
     def done(kind, d=None, g=None, own=None):
-        """g is the candidate git dir; it is reported only if accepted."""
-        parsed = kind in ("discovered", "bare", "explicit")
-        cfg = _repo_config(fs, g) if g is not None else []
-        keys = sorted(k for k in cfg if k in COMMAND_VALUED_KEYS) if parsed else []
-        if mode != "pre_fix" and "safe.directory" in cfg:
-            ignored.append("repo")
+        """g is the candidate git dir; it is reported only if accepted.
+
+        The repository config is read only when the repository was accepted
+        (``parsed``). A rejected repository's config is never opened, so its
+        contents cannot be reported as read or as ignored.
+        """
+        parsed = kind in ("discovered", "bare", "explicit") and g is not None
+        cfg = _repo_config(fs, g) if parsed else []
+        keys = sorted(k for k in cfg if k in COMMAND_VALUED_KEYS)
+        if mode != "pre_fix":
+            # Policy, independent of any parse: read_very_early_config sets
+            # ignore_repo/ignore_worktree, so safe.directory is never taken
+            # from repository or worktree config.
+            trace.append("policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)")
+            if parsed and "safe.directory" in cfg:
+                ignored.append("repo")
+        if kind == "invalid_ownership":
+            trace.append("repo config not read: ownership rejected")
         return Result(kind, d, g if parsed else None, own, trace, visited, parsed, keys, sorted(set(ignored)))
 
     if env.git_dir:

@@ -113,3 +113,56 @@ class Rules(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NoConfigReadWhenRejected(unittest.TestCase):
+    """The repository config must not be opened for a rejected repository."""
+
+    def _spy_run(self, fs, cwd, env, mode):
+        import git_safedir_model.discovery as disc
+        calls, reads = [], []
+        real_cfg, real_get = disc._repo_config, fs.get
+
+        def spy_cfg(f, g):
+            calls.append(g)
+            return real_cfg(f, g)
+
+        def spy_get(p):
+            if p.endswith("/config"):
+                reads.append(p)
+            return real_get(p)
+
+        disc._repo_config = spy_cfg
+        fs.get = spy_get
+        try:
+            r = disc.discover(fs, cwd, env, mode)
+        finally:
+            disc._repo_config = real_cfg
+            del fs.get
+        return r, calls, reads
+
+    def _foreign_with_cfg(self):
+        fs = fs_with_repo("/srv/r", BOB)
+        fs.add("/srv/r/.git/config", "file", BOB,
+               content="[safe]\n\tdirectory = /srv/r\n[core]\n\tfsmonitor = x\n")
+        return fs
+
+    def test_invalid_ownership_never_reads_config(self):
+        for m in ("fix_8959555", "fix_0f85c4a"):
+            r, calls, reads = self._spy_run(self._foreign_with_cfg(), "/srv/r", Env(uid=ALICE), m)
+            self.assertEqual(r.kind, "invalid_ownership")
+            self.assertEqual((calls, reads), ([], []), m)
+            self.assertFalse(r.repo_config_parsed)
+            self.assertNotIn("repo", r.ignored_safe_directory_sources)
+            self.assertEqual(r.command_valued_keys_in_repo_config, [])
+            self.assertIn("repo config not read: ownership rejected", r.safe_trace)
+            self.assertTrue(any(t.startswith("policy:") for t in r.safe_trace))
+
+    def test_accepted_repo_reads_config_once(self):
+        r, calls, reads = self._spy_run(self._foreign_with_cfg(), "/srv/r",
+                                        Env(uid=ALICE, global_=["/srv/r"]), "fix_8959555")
+        self.assertEqual(r.kind, "discovered")
+        self.assertEqual(calls, ["/srv/r/.git"])
+        self.assertEqual(reads, ["/srv/r/.git/config"])
+        self.assertIn("repo", r.ignored_safe_directory_sources)
+        self.assertEqual(r.command_valued_keys_in_repo_config, ["core.fsmonitor"])

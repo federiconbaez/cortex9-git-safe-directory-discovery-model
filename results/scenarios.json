@@ -8,7 +8,8 @@
    "ownership": "owned",
    "repo_config_parsed": true,
    "safe_trace": [
-    "owner uid 1000 == current uid"
+    "owner uid 1000 == current uid",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/home/alice/proj/src",
@@ -24,7 +25,8 @@
    "ownership": "owned",
    "repo_config_parsed": true,
    "safe_trace": [
-    "owner uid 1000 == current uid"
+    "owner uid 1000 == current uid",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/home/alice/proj/src",
@@ -55,7 +57,10 @@
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/tmp/alice-work",
     "/tmp"
@@ -69,7 +74,10 @@
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/tmp/alice-work",
     "/tmp"
@@ -102,7 +110,8 @@
    "ownership": "safe_listed",
    "repo_config_parsed": true,
    "safe_trace": [
-    "global: '/srv/shared' -> match"
+    "global: '/srv/shared' -> match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/srv/shared"
@@ -117,7 +126,8 @@
    "ownership": "safe_listed",
    "repo_config_parsed": true,
    "safe_trace": [
-    "global: '/srv/shared' -> match"
+    "global: '/srv/shared' -> match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/srv/shared"
@@ -142,13 +152,14 @@
   "fix_0f85c4a": {
    "command_valued_keys_in_repo_config": [],
    "gitdir": null,
-   "ignored_safe_directory_sources": [
-    "repo"
-   ],
+   "ignored_safe_directory_sources": [],
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/srv/shared"
    ],
@@ -157,13 +168,14 @@
   "fix_8959555": {
    "command_valued_keys_in_repo_config": [],
    "gitdir": null,
-   "ignored_safe_directory_sources": [
-    "repo"
-   ],
+   "ignored_safe_directory_sources": [],
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/srv/shared"
    ],
@@ -193,7 +205,10 @@
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/srv/shared"
    ],
@@ -208,7 +223,10 @@
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/srv/shared"
    ],
@@ -238,7 +256,9 @@
    "repo_config_parsed": false,
    "safe_trace": [
     "system: '/srv/shared' -> match",
-    "global: '' -> reset"
+    "global: '' -> reset",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -254,7 +274,9 @@
    "repo_config_parsed": false,
    "safe_trace": [
     "system: '/srv/shared' -> match",
-    "global: '' -> reset"
+    "global: '' -> reset",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -284,7 +306,8 @@
    "ownership": "safe_listed",
    "repo_config_parsed": true,
    "safe_trace": [
-    "system: '*' -> safe"
+    "system: '*' -> safe",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/srv/shared"
@@ -299,7 +322,9 @@
    "ownership": "rejected",
    "repo_config_parsed": false,
    "safe_trace": [
-    "system: '*' -> no match"
+    "system: '*' -> no match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -331,7 +356,9 @@
    "safe_trace": [
     "system: '*' -> safe",
     "global: '' -> reset",
-    "global: '/srv/other' -> no match"
+    "global: '/srv/other' -> no match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -348,7 +375,9 @@
    "safe_trace": [
     "system: '*' -> no match",
     "global: '' -> reset",
-    "global: '/srv/other' -> no match"
+    "global: '/srv/other' -> no match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -378,7 +407,8 @@
    "ownership": "safe_listed",
    "repo_config_parsed": true,
    "safe_trace": [
-    "global: '~/from-bob' -> match"
+    "global: '~/from-bob' -> match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/home/alice/from-bob"
@@ -393,7 +423,8 @@
    "ownership": "safe_listed",
    "repo_config_parsed": true,
    "safe_trace": [
-    "global: '~/from-bob' -> match"
+    "global: '~/from-bob' -> match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/home/alice/from-bob"
@@ -423,7 +454,9 @@
    "ownership": "rejected",
    "repo_config_parsed": false,
    "safe_trace": [
-    "global: '/srv/shared/' -> no match"
+    "global: '/srv/shared/' -> no match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -438,7 +471,9 @@
    "ownership": "rejected",
    "repo_config_parsed": false,
    "safe_trace": [
-    "global: '/srv/shared/' -> no match"
+    "global: '/srv/shared/' -> no match",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
    ],
    "visited": [
     "/srv/shared"
@@ -467,7 +502,9 @@
    "kind": "hit_ceiling",
    "ownership": null,
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
+   ],
    "visited": [
     "/tmp/alice-work/sub",
     "/tmp/alice-work"
@@ -481,7 +518,9 @@
    "kind": "hit_ceiling",
    "ownership": null,
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
+   ],
    "visited": [
     "/tmp/alice-work/sub",
     "/tmp/alice-work"
@@ -511,7 +550,9 @@
    "kind": "hit_mount_point",
    "ownership": null,
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
+   ],
    "visited": [
     "/mnt/share/docs",
     "/mnt/share"
@@ -525,7 +566,9 @@
    "kind": "hit_mount_point",
    "ownership": null,
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
+   ],
    "visited": [
     "/mnt/share/docs",
     "/mnt/share"
@@ -555,7 +598,10 @@
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/srv/bare.git"
    ],
@@ -568,7 +614,10 @@
    "kind": "invalid_ownership",
    "ownership": "rejected",
    "repo_config_parsed": false,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)",
+    "repo config not read: ownership rejected"
+   ],
    "visited": [
     "/srv/bare.git"
    ],
@@ -597,7 +646,8 @@
    "ownership": "owned",
    "repo_config_parsed": true,
    "safe_trace": [
-    "owner uid 1000 == current uid"
+    "owner uid 1000 == current uid",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/srv/bobdir/alice-repo"
@@ -612,7 +662,8 @@
    "ownership": "owned",
    "repo_config_parsed": true,
    "safe_trace": [
-    "owner uid 1000 == current uid"
+    "owner uid 1000 == current uid",
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
    ],
    "visited": [
     "/srv/bobdir/alice-repo"
@@ -641,7 +692,9 @@
    "kind": "explicit",
    "ownership": "not_checked",
    "repo_config_parsed": true,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
+   ],
    "visited": [],
    "worktree_or_dir": null
   },
@@ -652,7 +705,9 @@
    "kind": "explicit",
    "ownership": "not_checked",
    "repo_config_parsed": true,
-   "safe_trace": [],
+   "safe_trace": [
+    "policy: safe.directory not taken from repo/worktree config (ignore_repo, ignore_worktree)"
+   ],
    "visited": [],
    "worktree_or_dir": null
   },

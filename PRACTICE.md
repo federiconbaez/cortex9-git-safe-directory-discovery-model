@@ -36,6 +36,8 @@ pero un cwd igual al techo sí? (test `test_cwd_is_checked_even_if_ceiling`).
 Relaciónalo con el bucle `while (--offset > ceil_offset ...)`.
 
 **Nivel 3 — alcances.** Explica 03, 04 y 05 citando `read_very_early_config`.
+En 04, ¿por qué el modelo no puede decir que "leyó e ignoró" el
+`safe.directory` del repo? Mira el test con spy `NoConfigReadWhenRejected`.
 ¿Por qué tendría sentido que la config del propio repo no pueda declararse
 segura a sí misma?
 

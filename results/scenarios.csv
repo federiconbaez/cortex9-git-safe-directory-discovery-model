@@ -9,8 +9,8 @@ scenario,mode,kind,ownership,checked_dir,repo_config_parsed,command_valued_keys,
 03_foreign_repo_listed_global,fix_8959555,discovered,safe_listed,/srv/shared,True,,,1
 03_foreign_repo_listed_global,fix_0f85c4a,discovered,safe_listed,/srv/shared,True,,,1
 04_listed_only_in_repo_config,pre_fix,discovered,not_checked,/srv/shared,True,,,1
-04_listed_only_in_repo_config,fix_8959555,invalid_ownership,rejected,/srv/shared,False,,repo,1
-04_listed_only_in_repo_config,fix_0f85c4a,invalid_ownership,rejected,/srv/shared,False,,repo,1
+04_listed_only_in_repo_config,fix_8959555,invalid_ownership,rejected,/srv/shared,False,,,1
+04_listed_only_in_repo_config,fix_0f85c4a,invalid_ownership,rejected,/srv/shared,False,,,1
 05_listed_only_on_cmdline,pre_fix,discovered,not_checked,/srv/shared,True,,,1
 05_listed_only_on_cmdline,fix_8959555,invalid_ownership,rejected,/srv/shared,False,,cmdline,1
 05_listed_only_on_cmdline,fix_0f85c4a,invalid_ownership,rejected,/srv/shared,False,,cmdline,1

@@ -41,7 +41,11 @@ python3 scripts/gen_results.py /tmp/out && diff -r results /tmp/out
   `/tmp/.git` and its config (with a `core.fsmonitor` key) would be parsed;
   both fixed modes return `invalid_ownership` and parse nothing.
 - 04/05: listing a directory in the repo's own config or with `-c` has no
-  effect; the model reports those sources as ignored.
+  effect. For 05 the `-c` value is an input the model knows about, so it is
+  reported in `ignored_sources`. For 04 the repository is rejected, so its
+  config is **never read** (`repo_config_parsed = False`, verified by a spy
+  test) and it is not reported as read or ignored; the trace records the
+  policy instead (`read_very_early_config` ignores repo/worktree config).
 - 06/08: an empty value resets; `*` works only with 0f85c4a (07).
 - 10: `/srv/shared/` ≠ `/srv/shared` under exact comparison.
 - 14: a repo you own inside a directory you don't own is accepted (only the
